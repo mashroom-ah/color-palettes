@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg-1: #f5f7fb;
+  --bg-2: #eef4ff;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #4e8cff;
+  --accent-2: #7c5cff;
+  --card-shadow-1: 0 6px 18px rgba(15,23,42,0.06);
+  --radius-lg: 14px;
+  --max-width: 1100px;
+  --ui-border: rgba(15,23,42,0.04);
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2) 140%);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.45;
+}
+
+#app{display:flex;flex-direction:column;min-height:100vh;align-items:center;padding:28px 20px}
+
+/* Header: более тёмный фон, белый текст для читаемости */
+.app-header{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 20px;
+  margin-bottom:20px;
+  background: linear-gradient(90deg,#2b3a66,#20263f);
+  color: #ffffff;
+  border-radius:var(--radius-lg);
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: var(--card-shadow-1);
+}
+.app-header h1{margin:0;font-size:20px;font-weight:700;color:#fff}
+.app-header .subtitle{font-size:13px;color:rgba(255,255,255,0.8)}
+
+.nav{display:flex;gap:10px}
+.nav a{
+  padding:8px 12px;border-radius:10px;text-decoration:none;color:rgba(255,255,255,0.9);
+  font-weight:600;border:1px solid transparent;transition:all .18s ease;
+}
+.nav a.router-link-active{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;
+  box-shadow:0 8px 20px rgba(78,140,255,0.12);
+  transform:translateY(-1px);
+}
+
+/* общий контейнер и секции — единая ширина для всех страниц */
+.main{width:100%;max-width:var(--max-width);display:flex;flex-direction:column;gap:18px}
+.section{
+  background:var(--panel);
+  border-radius:var(--radius-lg);
+  padding:16px;
+  box-shadow:var(--card-shadow-1);
+  border:1px solid var(--ui-border);
+}
+
+/* утилиты */
+.small-muted{font-size:13px;color:var(--muted)}
+.center{display:flex;align-items:center;justify-content:center}
+
+/* focus outline */
+button:focus, a:focus, input:focus, select:focus { outline: 3px solid rgba(78,140,255,0.16); outline-offset:2px; }
+
+@media (max-width:920px){
+  .app-header{padding:14px;flex-direction:column;align-items:flex-start;gap:10px}
+}
