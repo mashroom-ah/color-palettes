@@ -1,1 +1,1 @@
-👉 **[Открыть приложение](https://github.com/mashroom-ah/color-palettes/)**
+👉 **[Открыть приложение](https://mashroom-ah.github.io/color-palettes/)**
